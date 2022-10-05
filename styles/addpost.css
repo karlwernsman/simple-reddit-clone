@@ -1,0 +1,120 @@
+#submit-button {
+    align-items: center;
+    background-color: #fee6e3;
+    border: 2px solid #111;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #111;
+    cursor: pointer;
+    display: flex;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    height: 48px;
+    justify-content: center;
+    line-height: 24px;
+    max-width: 100%;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#submit-button:after {
+    background-color: #111;
+    border-radius: 8px;
+    content: '';
+    display: block;
+    height: 48px;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    transform: translate(8px, 8px);
+    transition: transform 0.2s ease-out;
+    z-index: -1;
+}
+
+#submit-button:hover:after {
+    transform: translate(0, 0);
+}
+
+#submit-button:active {
+    background-color: #ffdeda;
+    outline: 0;
+}
+
+#submit-button:hover {
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    #submit-button {
+        padding: 0 40px;
+    }
+}
+
+#submit-button {
+    width: 300px;
+    height: 75px;
+    justify-self: center;
+    background-color: #fbeee0;
+    border: 2px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+#submit-button:hover {
+    background-color: #fff;
+}
+#submit-button:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+@media (min-width: 768px) {
+    #submit-button {
+        min-width: 120px;
+        padding: 0 25px;
+    }
+}
+
+#image-placeholder {
+    width: 40%;
+    justify-self: center;
+}
+
+#image-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+#add-post-form {
+    background-color: floralwhite;
+    display: grid;
+    border: darkolivegreen 10px outset;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+    width: 500px;
+    justify-self: center;
+    border-radius: 25px;
+    height: 200px;
+    height: 600px;
+}
+
+#add-post-title {
+    text-align: center;
+}

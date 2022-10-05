@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Somethin' like Reddit</title>
+        <link rel="icon" type="image/x-icon" href="../assets/alchemy-favicon.png" />
+
+        <!-- js -->
+        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script type="module" src="app.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="../styles/reset.css" />
+        <link rel="stylesheet" href="../styles/global.css" />
+        <link rel="stylesheet" href="../styles/addpost.css" />
+        <!-- add link for page specific css -->
+    </head>
+
+    <body>
+        <header class="page-header">
+            <!-- <img class="logo" src="/assets/html_css_js.png" alt="logo" /> -->
+            <p class="title">Somethin' like Reddit</p>
+            <nav>
+                <a href="../">Posts</a>
+                <a id="sign-out-link" href="auth">Sign Out</a>
+            </nav>
+        </header>
+
+        <main>
+            <h2 id="add-post-title">Add a post to our page!</h2>
+            <form id="add-post-form">
+                <label id="image-section">
+                    Add an image to your post!
+                    <input
+                        type="file"
+                        id="image-input"
+                        name="image"
+                        placeholder="Choose an image to upload..."
+                        required
+                    />
+                    <img id="image-placeholder" alt="placeholder" src="../assets/placholder.png" />
+                </label>
+
+                <label>
+                    <div>Title</div>
+                    <input name="title" placeholder="Add a title for your post" required />
+                </label>
+
+                <label>
+                    <div>Tell us more</div>
+                    <input name="info" placeholder="Give us the deets!" required />
+                </label>
+
+                <button id="submit-button">Submit post</button>
+                <p id="error-display"></p>
+            </form>
+
+            <label id="attribute">
+                <a href="https://www.flaticon.com/free-icons/picture" title="picture icons"
+                    >Picture icons created by Freepik - Flaticon</a
+                >
+            </label>
+        </main>
+    </body>
+</html>
