@@ -1,5 +1,5 @@
 /* Imports */
-import { getPost } from '../fetch-utils.js';
+import { getPost, createComment } from '../fetch-utils.js';
 // this will check if we have a user and set signout link if it exists
 import '../auth/user.js';
 
@@ -8,6 +8,7 @@ const errorDisplay = document.getElementById('error-display');
 const postTitle = document.getElementById('post-title');
 const postInfo = document.getElementById('post-info');
 const postImage = document.getElementById('post-image');
+const addCommentForm = document.getElementById('add-comment-form');
 
 /* State */
 let error = null;
@@ -36,6 +37,21 @@ window.addEventListener('load', async () => {
     } else {
         displayPost();
     }
+});
+
+addCommentForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // > Part C:
+    //    - create an comment insert object from formdata and the id of the pet
+    const formData = new FormData(addCommentForm);
+    const commentInsert = {
+        text: formData.get('text'),
+        post_id: post.id,
+    };
+    //    - create the comment
+    const response = await createComment(commentInsert);
+    error = response.error;
 });
 
 /* Display Functions */
