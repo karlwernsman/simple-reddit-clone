@@ -115,11 +115,12 @@
 
 #image-section {
     font-size: 15px;
-    padding-top: 30px;
+    padding-top: 10px;
     width: 300px;
     display: grid;
     text-align: left;
-    padding-bottom: 30px;
+    font-weight: bold;
+    color: darkolivegreen;
 }
 
 #file-input {
@@ -134,8 +135,14 @@
     text-align: left;
     width: 300px;
     padding-top: 20px;
+    color: darkolivegreen;
+    font-weight: bold;
 }
 
 header {
     color: darkolivegreen;
+}
+
+#more-info {
+    padding-bottom: 20px;
 }

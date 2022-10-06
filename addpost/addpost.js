@@ -21,9 +21,9 @@ postForm.addEventListener('submit', async (e) => {
     const url = await uploadImage('photos', imagePath, imageFile);
 
     const post = {
+        image_url: url,
         title: formData.get('title'),
         info: formData.get('info'),
-        image_url: url,
     };
 
     const response = await createPost(post);
