@@ -1,0 +1,52 @@
+main {
+    display: grid;
+    grid-template-rows: auto 2px auto 1fr;
+    gap: 10px;
+}
+
+.post-summary {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    grid-template-areas:
+        'image title'
+        'image info';
+    background: floralwhite;
+    border: darkolivegreen 10px outset;
+}
+
+#post-title {
+    grid-area: title;
+    align-self: center;
+    padding-left: 20px;
+}
+
+#post-image {
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+#post-info {
+    grid-area: info;
+    padding-left: 20px;
+}
+
+#add-comment-form {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+}
+
+input {
+    height: 50px;
+}
+
+button {
+    height: 50px;
+}
+
+#comment-list li {
+    background: floralwhite;
+}

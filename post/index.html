@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Somethin' like Reddit</title>
+        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+
+        <!-- js -->
+        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script type="module" src="app.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/posts.css" />
+        <!-- add link for page specific css -->
+        <link rel="stylesheet" href="/styles/post.css" />
+    </head>
+
+    <body>
+        <header class="page-header">
+            <p class="title">Somethin' like Reddit</p>
+            <nav>
+                <a href="../">Posts</a>
+                <a href="../addpost">Add Post</a>
+                <a id="sign-out-link" href="auth">Sign Out</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="post-summary">
+                <h1 id="post-title">Post</h1>
+                <p id="post-info">Here is where more info will be...</p>
+                <img id="post-image" src="../assets/animal.JPG" />
+            </section>
+
+            <p id="error-display" class="error"></p>
+
+            <div>
+                <form id="add-comment-form">
+                    <input name="text" placeholder="Add your comment here..." />
+                    <button>Submit</button>
+                </form>
+            </div>
+
+            <ul id="comment-list"></ul>
+        </main>
+    </body>
+</html>

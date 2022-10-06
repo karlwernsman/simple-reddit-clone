@@ -2,6 +2,10 @@ li {
     background: floralwhite;
     border: darkolivegreen 10px outset;
 }
+li a {
+    text-decoration: none;
+    color: initial;
+}
 
 li img {
     object-fit: contain;
