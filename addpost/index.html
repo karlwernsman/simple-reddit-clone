@@ -41,37 +41,46 @@
 
         <main>
             <h2 id="add-post-title">Add a post to our page!</h2>
-            <form id="add-post-form">
-                <label id="image-section">
-                    Add an image to your post!
-                    <input
-                        type="file"
-                        id="image-input"
-                        name="image"
-                        placeholder="Choose an image to upload..."
-                        required
-                    />
-                    <img id="image-placeholder" alt="placeholder" src="../assets/placholder.png" />
-                </label>
+            <div align="center">
+                <form id="add-post-form">
+                    <label class="inputs">
+                        Title
+                        <input name="title" placeholder="Add a title for your post" required />
+                    </label>
 
-                <label>
-                    <div>Title</div>
-                    <input name="title" placeholder="Add a title for your post" required />
-                </label>
+                    <label class="inputs">
+                        Tell us more
+                        <textarea name="info" placeholder="Give us the deets!" required></textarea>
+                    </label>
 
-                <label>
-                    <div>Tell us more</div>
-                    <input name="info" placeholder="Give us the deets!" required />
-                </label>
+                    <label id="image-section">
+                        Image
+                        <div id="file-input">
+                            <input
+                                type="file"
+                                id="image-input"
+                                name="image"
+                                placeholder="Choose an image to upload..."
+                                required
+                            />
+                        </div>
+                        <img
+                            id="image-placeholder"
+                            alt="placeholder"
+                            src="../assets/placholder.png"
+                        />
+                    </label>
 
-                <button id="submit-button">Submit post</button>
-                <p id="error-display"></p>
-            </form>
-
+                    <button id="submit-button">Submit post</button>
+                    <p id="error-display"></p>
+                </form>
+            </div>
             <label id="attribute">
-                <a href="https://www.flaticon.com/free-icons/picture" title="picture icons"
-                    >Picture icons created by Freepik - Flaticon</a
-                >
+                <div align="center">
+                    <a href="https://www.flaticon.com/free-icons/picture" title="picture icons"
+                        >Picture icons created by Freepik - Flaticon</a
+                    >
+                </div>
             </label>
         </main>
     </body>
