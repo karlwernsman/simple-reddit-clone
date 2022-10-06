@@ -1,5 +1,6 @@
 /* Imports */
-import { getPost, createComment } from '../fetch-utils.js';
+import { getPost, createComment, getUser } from '../fetch-utils.js';
+import { renderComment } from '../render-utils.js';
 // this will check if we have a user and set signout link if it exists
 import '../auth/user.js';
 
@@ -9,10 +10,12 @@ const postTitle = document.getElementById('post-title');
 const postInfo = document.getElementById('post-info');
 const postImage = document.getElementById('post-image');
 const addCommentForm = document.getElementById('add-comment-form');
+const commentList = document.getElementById('comment-list');
 
 /* State */
 let error = null;
 let post = null;
+const user = getUser();
 
 /* Events */
 window.addEventListener('load', async () => {
@@ -36,22 +39,30 @@ window.addEventListener('load', async () => {
         location.replace('/');
     } else {
         displayPost();
+        displayComments();
     }
 });
 
 addCommentForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // > Part C:
-    //    - create an comment insert object from formdata and the id of the pet
     const formData = new FormData(addCommentForm);
     const commentInsert = {
         text: formData.get('text'),
         post_id: post.id,
     };
-    //    - create the comment
+
     const response = await createComment(commentInsert);
     error = response.error;
+
+    if (error) {
+        displayError();
+    } else {
+        const comment = response.data;
+        post.comments.unshift(comment);
+        displayComments();
+        addCommentForm.reset();
+    }
 });
 
 /* Display Functions */
@@ -67,4 +78,13 @@ function displayPost() {
     postTitle.textContent = post.title;
     postInfo.textContent = post.info;
     postImage.src = post.image_url;
+}
+
+function displayComments() {
+    commentList.innerHTML = '';
+
+    for (const comment of post.comments) {
+        const commentEl = renderComment(comment, user.id);
+        commentList.append(commentEl);
+    }
 }
